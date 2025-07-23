@@ -119,4 +119,4 @@ BOARD_AVB_VENDOR_BOOT_ROLLBACK_INDEX_LOCATION := 1
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Inherit the proprietary files
-include vendor/xiaomi/generic/BoardConfigVendor.mk
+include vendor/xiaomi/onyx/BoardConfigVendor.mk

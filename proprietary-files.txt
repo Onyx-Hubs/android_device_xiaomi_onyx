@@ -3,8 +3,8 @@
 # ACDB
 odm/etc/acdbdata/Fluence/sia91xx/Fluence_acdb_cal_sia.acdb
 odm/etc/acdbdata/Fluence/sia91xx/Fluence_workspaceFileXml_sia.qwsp
-odm/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb
-odm/etc/acdbdata/Fluence/Fluence_workspaceFileXml.qwsp
+odm/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb:odm/etc/acdbdata/cliffs_mtp/Fluence_acdb_cal.acdb
+odm/etc/acdbdata/Fluence/Fluence_workspaceFileXml.qwsp:odm/etc/acdbdata/cliffs_mtp/Fluence_workspaceFileXml.qwsp
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_workspaceFileXml.qwsp
 vendor/etc/acdbdata/ffv_models/ffv__5.0.2_0.1__eai_4.8_enpu_v5.pmd

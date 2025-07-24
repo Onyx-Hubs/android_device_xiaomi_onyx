@@ -44,12 +44,15 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+# Graphics
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common-V4-ndk.vendor
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
-# Overlays
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     CarrierConfigOverlayOnyx \

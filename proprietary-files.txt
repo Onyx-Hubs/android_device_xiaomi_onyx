@@ -204,13 +204,13 @@ vendor/lib64/soundfx/libvisualizeraidl.so
 vendor/lib64/soundfx/libvolumelistener.so
 vendor/lib64/com.android.ozoaudio.notify-V1-ndk.so
 vendor/lib64/libPeripheralStateUtils.so
-vendor/lib64/libagm.so
+-vendor/lib64/libagm.so
 vendor/lib64/libagmclient.so
 vendor/lib64/libalsautilsv2.so
 vendor/lib64/libar-acdb.so
 vendor/lib64/libar-gpr.so
 vendor/lib64/libar-gsl.so
-vendor/lib64/libar-pal.so
+-vendor/lib64/libar-pal.so
 vendor/lib64/libarmemlog.so
 vendor/lib64/libats.so
 vendor/lib64/libaudio_aidl_conversion_common_ndk.so
@@ -4920,6 +4920,7 @@ vendor/lib64/libkernelmanager.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/liblearningmodule.so
 vendor/lib64/liblightninglaunches.so
+-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/liblistensoundmodelaidl.so
 vendor/lib64/libllvm-qcom.so

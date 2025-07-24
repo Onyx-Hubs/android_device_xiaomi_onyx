@@ -3996,13 +3996,11 @@ vendor/bin/audioadsprpcd
 vendor/bin/bootmode
 vendor/bin/btconfig
 vendor/bin/ccid_daemon_nr
-vendor/bin/checkpoint_gc
 vendor/bin/cnss_cli
 vendor/bin/cnss_diag
 vendor/bin/color
 vendor/bin/color_sampling_test
 vendor/bin/color_sampling_tool
-vendor/bin/cplay
 vendor/bin/csaudiotransfer_test
 vendor/bin/ctlogger
 vendor/bin/ctrlapp_dut
@@ -4019,7 +4017,6 @@ vendor/bin/displayfeature
 vendor/bin/dlsc
 vendor/bin/dppdaemon
 vendor/bin/drm_sample_app
-vendor/bin/dumpsys
 vendor/bin/e_loop
 vendor/bin/ecb
 vendor/bin/edgnss-daemon
@@ -4048,7 +4045,6 @@ vendor/bin/iperf3.zc
 vendor/bin/ipp_key_gen
 vendor/bin/ipp_test
 vendor/bin/irsc_util
-vendor/bin/iw
 vendor/bin/loadalgo
 vendor/bin/mbnota
 vendor/bin/mcs_test
@@ -4097,7 +4093,6 @@ vendor/bin/rpmbClient
 vendor/bin/sec_log_enabler
 vendor/bin/set_diag_state
 vendor/bin/setfattr
-vendor/bin/sg_write_buffer
 vendor/bin/show_reserved_mem
 vendor/bin/shsusrd
 vendor/bin/sigma_dut
@@ -4113,7 +4108,6 @@ vendor/bin/ssr_diag
 vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
 vendor/bin/sxrservicetest
-vendor/bin/tcpdump
 vendor/bin/test_diag
 vendor/bin/thermal-engine-v2
 vendor/bin/tlpd
@@ -4443,7 +4437,6 @@ vendor/etc/kvh2xml.xml
 vendor/etc/linker.config.pb
 vendor/etc/mem_logger_config.xml
 vendor/etc/microphone_characteristics.xml
-vendor/etc/mkshrc
 vendor/etc/nfcon.pnscr
 vendor/etc/public.libraries.txt
 vendor/etc/qguard.json

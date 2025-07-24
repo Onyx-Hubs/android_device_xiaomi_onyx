@@ -39,6 +39,11 @@ PRODUCT_PACKAGES += \
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 35
 
+# Biometrics
+PRODUCT_PACKAGES += \
+    android.frameworks.cameraservice.device-V1-ndk.vendor \
+    android.frameworks.cameraservice.service-V1-ndk.vendor
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \

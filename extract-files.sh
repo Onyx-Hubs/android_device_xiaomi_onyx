@@ -1,61 +1,53 @@
-#!/bin/bash
+#!/usr/bin/env -S PYTHONPATH=../../../tools/extract-utils python3
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020 The LineageOS Project
-#
+# SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
-set -e
+from extract_utils.extract import extract_fns_user_type
+from extract_utils.extract_star import extract_star_firmware
 
-DEVICE=onyx
-VENDOR=xiaomi
+from extract_utils.fixups_blob import (
+    blob_fixup,
+    blob_fixups_user_type,
+)
 
-# Load extract_utils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
+from extract_utils.fixups_lib import (
+    lib_fixups,
+    lib_fixups_user_type,
+)
+from extract_utils.main import (
+    ExtractUtils,
+    ExtractUtilsModule,
+)
 
-ANDROID_ROOT="${MY_DIR}/../../.."
+namespace_imports = [
+    'hardware/xiaomi',
+    'hardware/qcom-caf/sm8750',
+    'hardware/qcom-caf/wlan',
+    'vendor/qcom/opensource/commonsys-intf/display',
+    'vendor/qcom/opensource/commonsys/display',
+    'vendor/qcom/opensource/dataservices',
+    'vendor/qcom/opensource/display',
+]
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
-if [ ! -f "${HELPER}" ]; then
-    echo "Unable to find helper script at ${HELPER}"
-    exit 1
-fi
-source "${HELPER}"
+lib_fixups: lib_fixups_user_type = {
+    **lib_fixups,
+}
 
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
+module = ExtractUtilsModule(
+    'onyx',
+    'xiaomi',
+    blob_fixups=blob_fixups,
+    lib_fixups=lib_fixups,
+    namespace_imports=namespace_imports,
+    extract_fns=extract_fns,
+    add_firmware_proprietary_file=True,
+    add_generated_carriersettings=True,
+)
 
-KANG=
-SECTION=
-
-while [ "${#}" -gt 0 ]; do
-    case "${1}" in
-        -n | --no-cleanup )
-                CLEAN_VENDOR=false
-                ;;
-        -k | --kang )
-                KANG="--kang"
-                ;;
-        -s | --section )
-                SECTION="${2}"; shift
-                CLEAN_VENDOR=false
-                ;;
-        * )
-                SRC="${1}"
-                ;;
-    esac
-    shift
-done
-
-if [ -z "${SRC}" ]; then
-    SRC="adb"
-fi
-
-# Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
-
-extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-
-"${MY_DIR}/setup-makefiles.sh"
+if __name__ == '__main__':
+    utils = ExtractUtils.device_with_common(
+        module, 'sm8750-common', module.vendor
+    )
+    utils.run()

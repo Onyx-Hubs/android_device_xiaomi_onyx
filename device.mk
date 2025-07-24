@@ -50,7 +50,16 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    CarrierConfigOverlayOnyx \
+    FrameworkOverlayOnyx \
+    SettingsOverlayOnyx \
+    SystemUIOverlayOnyx \
+    TelephonyOverlayOnyx \
+    WifiOverlayOnyx \
+    WifiOverlayOnyxPOCO \
+    WifiOverlayOnyxRedmi
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

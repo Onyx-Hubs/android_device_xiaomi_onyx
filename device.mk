@@ -72,6 +72,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := gz
 
 # Product characteristics
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -159,6 +160,12 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Update engine
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
 
 # Vibrator
 PRODUCT_PACKAGES += \
